@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    <link rel="stylesheet" href="/static/css/styles.css?{% now "U" %}"/>
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}">
+    <link href="{% static 'https://fonts.googleapis.com/css2?family=Sacramento&family=Vesper+Libre&family=Yusei+Magic&display=swap' %}" rel="stylesheet">
+</head>
+
+
+<body>
+    <div class="top_container">
+        <img class="top-code" src="{% static 'images/qrcode.png' %}" alt="qr" height="100" width="100">
+        <h1>QR Code Scanner</h1>
+        <form action="generate">
+          Generate a QR code : <input type="text" name="data" placeholder="enter data to generate">
+          <button type="submit" name="Generate">Generate</button>
+          
+        </form>
+        <br>
+
+        <form action="scan">
+          Scan a QR Code :
+          <button type="submit" name="scan">Scan</button>
+        </form>
+        <img class="bottom-cloud" src="{% static 'images/qrcode.png' %}" alt="qr" height="100" width="100">
+        <img src="{% static 'images/mountain.png' %}" alt="mountain">
+ 
+    </div>
+    <div class="middle-container">
+        <div class="profile">
+          <h2>Hello</h2>
+          <p class="intro">I am a Third Year student of Engineering at MITWPU and this is my QR Code project </p>
+        </div>
+        <br>
+        <hr>
+        <div class="skills">
+          <div class="skill-row">
+            <img class="img2" src="https://media.giphy.com/media/xUA7aS269qm5PX7fa0/giphy.gif" alt="">
+            
+            <h3>Whats a QR Code?</h3>
+            <p>A QR Code is a two-dimensional barcode that is readable by smartphones. 
+              It allows to encode over 4000 characters in a two dimensional barcode. 
+              QR Codes may be used to display text to the user, to open a URL, save a contact to the address book or to compose text messages. 
+              "QR Code" is a registered trademark of DENSO WAVE INCORPORATED. </p> 
+          
+          
+          </div>
+          <div class="skill-row">
+            <img class="i2" src="https://media.giphy.com/media/PiQejEf31116URju4V/giphy.gif" alt="">
+            
+            <h3> Create a QR Code</h3>
+            <p>Just enter your text, your URL, a SMS or vCard contact information.
+              Just click on the “Save” button to download the created QR code image.
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="contact-me">
+          <h2>Get In Touch</h2>
+          <h3>If you like my web page and would like to connect</h3><br><br>
+          <a class="btn" href="mailto:pranaybhave04@email.com">CONTACT ME</a>
+        </div>
+      </div>
+
+
+    <div class="bottom-container">
+        <a class="footer-link" href="https://www.linkedin.com/">LinkedIn</a>
+        <a class="footer-link" href="https://twitter.com/">Twitter</a>
+        <p class='pp'>© 2021 Pranay Bhave</p>
+    </div>
+      
+</body>
+</html>
+
+{% endblock %}
